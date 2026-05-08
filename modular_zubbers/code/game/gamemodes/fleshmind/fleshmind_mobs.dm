@@ -1433,10 +1433,11 @@
 	flick("[base_icon_state]-opening", src)
 	addtimer(CALLBACK(src, PROC_REF(close_hatch)), 1 SECONDS)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_STOP_FLEEING, TRUE)
-	convert_mob(contained_mob)
+	//convert_mob(contained_mob) //SPLURT EDIT - No conversion
 	contained_mob = null
 	playsound(src, 'sound/effects/blob/blobattack.ogg', 70, 1)
 
+/* SPLURT EDIT - No conversion
 /mob/living/basic/fleshmind/mechiver/proc/convert_mob(mob/living/mob_to_convert)
 	ai_controller.clear_blackboard_key(BB_MECHIVER_CONTAINED_MOB)
 	log_combat(mob_to_convert, src, "converted", "Merchiver Convert", "[mob_to_convert] has been converted to the fleshmind.")
@@ -1476,6 +1477,8 @@
 			new_mob.previous_ckey = old_mob.mind.key
 			new_mob.key = old_mob.mind.key
 	return
+
+*/ // SPLUT EDIT END
 
 /*
 /**
